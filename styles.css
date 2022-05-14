@@ -1,0 +1,102 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: Gotham Rounded, sans-serif;
+  font-weight: normal;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(to right, #6CDEFF, #ACFEEA, #FEE7D4 , #FFB3CB)
+}
+
+.text {
+  display: flex;
+  color: rgb(48,48,48);
+  font-weight: bold;
+  justify-content: center;
+  font-size: large;
+
+}
+
+.text > p {
+  margin-left: 5px;
+}
+
+.calculator-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 80vh;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .2);
+  border-radius: .1em;
+}
+
+.calculator-grid > button {
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid white;
+  outline: none;
+  background-color: rgba(255, 255, 255, .75);
+}
+
+.calculator-grid > button:hover {
+  background-color: rgba(226, 213, 213, 0.9);
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.output {
+  grid-column: 1 / -1;
+  background-color: rgba(0, 0, 0, .75);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.output .previous-operand {
+  color: rgba(255, 255, 255, .75);
+  font-size: 1.5rem;
+}
+
+.output .current-operand {
+  color: white;
+  font-size: 2.5rem;
+}
+
+
+@media screen and (max-width: 760px) {
+  .calculator-grid {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 80px);
+  grid-template-rows: minmax(100px, auto) repeat(5, 80px);
+}
+
+.calculator-grid > button {
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: 1px solid whitesmoke;
+  outline: none;
+  background-color: rgba(223, 219, 219, 0.75);
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(to right, #D9A0FF, #81D8FF, #94F1ED , #FFB3CB)
+}
+
+.calculator-grid > button:hover {
+  background-color: rgba(251, 248, 250, 0.9);
+}
+}
